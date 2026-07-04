@@ -7,7 +7,7 @@ from .common import Coroutine, EventLoop, FutureState
 
 EL = EventLoop()
 
-def run(coro):
+def run(coro: Coroutine[Any, Any, Any]):
     EL.create_task(coro)
     EL.run_loop()
 

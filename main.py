@@ -1,5 +1,5 @@
-from collections.abc import Callable, Coroutine, Generator
-import dis, ast, inspect, time
+from collections.abc import Generator
+import time
 
 import miniasyncio as aio
 import asyncio as aio2
@@ -12,7 +12,7 @@ def doStuff(c: str, secs: float) -> Generator[None, None, str]:
     return f'Coro {c} result'
 
 @aio.__async__
-def main():
+def main() -> Generator[None, None, None]:
     print("\n\nStandard coroutine object:")
     start = time.time()
     results = yield from aio.gather(doStuff('A', 0.3), doStuff('B', 0.2), doStuff('C', 0.1)).__await__()
