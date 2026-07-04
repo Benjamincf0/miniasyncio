@@ -2,7 +2,7 @@
 name = "miniasyncio"
 version = "0.0.3"
 authors = [
-  { name="Benjamin", email="author@example.com" },
+  { name="Benjamin" },
 ]
 description = "A small async package"
 readme = "README.md"
